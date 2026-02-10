@@ -1,0 +1,74 @@
+{
+  "hd_to_counties": {
+    "1": ["Adams", "Wells"],
+    "2": ["Allen", "Wells"],
+    "53": ["Lake", "Porter"],
+    "86": ["Marion"],
+    "87": ["Marion"],
+    "88": ["Marion"],
+    "89": ["Marion"],
+    "90": ["Marion"],
+    "91": ["Marion"],
+    "92": ["Marion"],
+    "93": ["Marion"],
+    "94": ["Marion"],
+    "95": ["Marion"],
+    "96": ["Marion"],
+    "97": ["Marion"],
+    "98": ["Marion"],
+    "99": ["Marion"],
+    "100": ["Marion"]
+  },
+  "sd_to_counties": {
+    "1": ["DeKalb", "LaGrange", "Noble", "Steuben"],
+    "15": ["Lake", "Porter"],
+    "28": ["Marion"],
+    "29": ["Marion"],
+    "30": ["Marion"]
+  },
+  "cd_to_counties": {
+    "1": ["Lake", "Porter", "LaPorte"],
+    "7": ["Marion", "Hamilton"]
+  },
+  "county_to_hds": {
+    "Adams": [1],
+    "Allen": [2],
+    "Lake": [53],
+    "Porter": [53],
+    "Marion": [86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
+    "Wells": [1, 2],
+    "DeKalb": [1],
+    "LaGrange": [1],
+    "Noble": [1],
+    "Steuben": [1]
+  },
+  "county_to_sds": {
+    "Adams": [13],
+    "Allen": [13],
+    "Lake": [15],
+    "Porter": [15],
+    "Marion": [28, 29, 30],
+    "Wells": [13],
+    "DeKalb": [1],
+    "LaGrange": [1],
+    "Noble": [1],
+    "Steuben": [1],
+    "LaPorte": [8],
+    "Hamilton": [20]
+  },
+  "county_to_cds": {
+    "Adams": [3],
+    "Allen": [3],
+    "Lake": [1],
+    "Porter": [1],
+    "Marion": [7],
+    "Wells": [3],
+    "DeKalb": [3],
+    "LaGrange": [3],
+    "Noble": [3],
+    "Steuben": [3],
+    "LaPorte": [1],
+    "Hamilton": [5]
+  },
+  "all_counties": ["Adams", "Allen", "DeKalb", "Hamilton", "Lake", "LaGrange", "LaPorte", "Marion", "Noble", "Porter", "Steuben", "Wells"]
+}
