@@ -1,74 +1,705 @@
 {
   "hd_to_counties": {
-    "1": ["Adams", "Wells"],
-    "2": ["Allen", "Wells"],
-    "53": ["Lake", "Porter"],
-    "86": ["Marion"],
-    "87": ["Marion"],
-    "88": ["Marion"],
-    "89": ["Marion"],
-    "90": ["Marion"],
-    "91": ["Marion"],
-    "92": ["Marion"],
-    "93": ["Marion"],
-    "94": ["Marion"],
-    "95": ["Marion"],
-    "96": ["Marion"],
-    "97": ["Marion"],
-    "98": ["Marion"],
-    "99": ["Marion"],
-    "100": ["Marion"]
+    "1": [
+      "Adams",
+      "Wells"
+    ],
+    "2": [
+      "Allen",
+      "Wells"
+    ],
+    "46": [
+      "Monroe",
+      "Owen",
+      "Clay",
+      "Vigo"
+    ],
+    "53": [
+      "Lake",
+      "Porter"
+    ],
+    "55": [
+      "Fayette",
+      "Franklin",
+      "Union",
+      "Decatur",
+      "Ripley",
+      "Rush"
+    ],
+    "60": [
+      "Monroe",
+      "Morgan",
+      "Johnson"
+    ],
+    "61": [
+      "Monroe"
+    ],
+    "62": [
+      "Monroe",
+      "Brown",
+      "Jackson"
+    ],
+    "65": [
+      "Lawrence",
+      "Jackson",
+      "Orange",
+      "Washington"
+    ],
+    "66": [
+      "Clark",
+      "Jefferson",
+      "Scott"
+    ],
+    "67": [
+      "Decatur",
+      "Jefferson",
+      "Jennings",
+      "Ripley"
+    ],
+    "68": [
+      "Dearborn",
+      "Ohio",
+      "Switzerland",
+      "Jefferson"
+    ],
+    "69": [
+      "Washington",
+      "Jackson",
+      "Scott",
+      "Bartholomew"
+    ],
+    "70": [
+      "Harrison",
+      "Floyd",
+      "Clark",
+      "Washington"
+    ],
+    "71": [
+      "Clark",
+      "Floyd"
+    ],
+    "72": [
+      "Floyd"
+    ],
+    "73": [
+      "Decatur",
+      "Jennings",
+      "Bartholomew",
+      "Shelby"
+    ],
+    "86": [
+      "Marion"
+    ],
+    "87": [
+      "Marion"
+    ],
+    "88": [
+      "Marion"
+    ],
+    "89": [
+      "Marion"
+    ],
+    "90": [
+      "Marion"
+    ],
+    "91": [
+      "Marion"
+    ],
+    "92": [
+      "Marion"
+    ],
+    "93": [
+      "Marion"
+    ],
+    "94": [
+      "Marion"
+    ],
+    "95": [
+      "Marion"
+    ],
+    "96": [
+      "Marion"
+    ],
+    "97": [
+      "Marion"
+    ],
+    "98": [
+      "Marion"
+    ],
+    "99": [
+      "Marion"
+    ],
+    "100": [
+      "Marion"
+    ]
   },
   "sd_to_counties": {
-    "1": ["DeKalb", "LaGrange", "Noble", "Steuben"],
-    "15": ["Lake", "Porter"],
-    "28": ["Marion"],
-    "29": ["Marion"],
-    "30": ["Marion"]
+    "1": [
+      "DeKalb",
+      "LaGrange",
+      "Noble",
+      "Steuben"
+    ],
+    "15": [
+      "Lake",
+      "Porter"
+    ],
+    "28": [
+      "Marion"
+    ],
+    "29": [
+      "Marion"
+    ],
+    "30": [
+      "Marion"
+    ],
+    "40": [
+      "Monroe"
+    ],
+    "41": [
+      "Bartholomew",
+      "Johnson"
+    ],
+    "42": [
+      "Decatur",
+      "Fayette",
+      "Franklin",
+      "Jennings",
+      "Ripley",
+      "Rush",
+      "Shelby"
+    ],
+    "43": [
+      "Dearborn",
+      "Jefferson",
+      "Jennings",
+      "Ohio",
+      "Scott",
+      "Switzerland"
+    ],
+    "44": [
+      "Brown",
+      "Jackson",
+      "Lawrence",
+      "Monroe",
+      "Orange"
+    ],
+    "45": [
+      "Clark",
+      "Floyd"
+    ],
+    "47": [
+      "Floyd",
+      "Harrison",
+      "Washington"
+    ]
   },
   "cd_to_counties": {
-    "1": ["Lake", "Porter", "LaPorte"],
-    "7": ["Marion", "Hamilton"]
+    "1": [
+      "Lake",
+      "Porter",
+      "LaPorte"
+    ],
+    "7": [
+      "Marion",
+      "Hamilton"
+    ],
+    "9": [
+      "Bartholomew",
+      "Brown",
+      "Clark",
+      "Dearborn",
+      "Decatur",
+      "Floyd",
+      "Franklin",
+      "Harrison",
+      "Jackson",
+      "Jefferson",
+      "Jennings",
+      "Lawrence",
+      "Monroe",
+      "Ohio",
+      "Ripley",
+      "Scott",
+      "Switzerland",
+      "Washington"
+    ]
   },
   "county_to_hds": {
-    "Adams": [1],
-    "Allen": [2],
-    "Lake": [53],
-    "Porter": [53],
-    "Marion": [86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
-    "Wells": [1, 2],
-    "DeKalb": [1],
-    "LaGrange": [1],
-    "Noble": [1],
-    "Steuben": [1]
+    "Adams": [
+      1
+    ],
+    "Allen": [
+      2
+    ],
+    "Bartholomew": [
+      69,
+      73
+    ],
+    "Brown": [
+      62
+    ],
+    "Clark": [
+      66,
+      70,
+      71
+    ],
+    "Clay": [
+      46
+    ],
+    "Dearborn": [
+      68
+    ],
+    "DeKalb": [
+      1
+    ],
+    "Decatur": [
+      55,
+      67,
+      73
+    ],
+    "Fayette": [
+      55
+    ],
+    "Floyd": [
+      70,
+      71,
+      72
+    ],
+    "Franklin": [
+      55
+    ],
+    "Harrison": [
+      70
+    ],
+    "Jackson": [
+      62,
+      65,
+      69
+    ],
+    "Jefferson": [
+      66,
+      67,
+      68
+    ],
+    "Jennings": [
+      67,
+      73
+    ],
+    "Johnson": [
+      60
+    ],
+    "Lake": [
+      53
+    ],
+    "LaGrange": [
+      1
+    ],
+    "Lawrence": [
+      65
+    ],
+    "Marion": [
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100
+    ],
+    "Monroe": [
+      46,
+      60,
+      61,
+      62
+    ],
+    "Morgan": [
+      60
+    ],
+    "Noble": [
+      1
+    ],
+    "Ohio": [
+      68
+    ],
+    "Orange": [
+      65
+    ],
+    "Owen": [
+      46
+    ],
+    "Porter": [
+      53
+    ],
+    "Ripley": [
+      55,
+      67
+    ],
+    "Rush": [
+      55
+    ],
+    "Scott": [
+      66,
+      69
+    ],
+    "Shelby": [
+      73
+    ],
+    "Steuben": [
+      1
+    ],
+    "Switzerland": [
+      68
+    ],
+    "Union": [
+      55
+    ],
+    "Vigo": [
+      46
+    ],
+    "Washington": [
+      65,
+      69,
+      70
+    ],
+    "Wells": [
+      1,
+      2
+    ]
   },
   "county_to_sds": {
-    "Adams": [13],
-    "Allen": [13],
-    "Lake": [15],
-    "Porter": [15],
-    "Marion": [28, 29, 30],
-    "Wells": [13],
-    "DeKalb": [1],
-    "LaGrange": [1],
-    "Noble": [1],
-    "Steuben": [1],
-    "LaPorte": [8],
-    "Hamilton": [20]
+    "Adams": [
+      13
+    ],
+    "Allen": [
+      13
+    ],
+    "Bartholomew": [
+      41
+    ],
+    "Brown": [
+      44
+    ],
+    "Clark": [
+      45
+    ],
+    "Clay": [
+      38
+    ],
+    "Dearborn": [
+      43
+    ],
+    "DeKalb": [
+      1
+    ],
+    "Decatur": [
+      42
+    ],
+    "Fayette": [
+      42
+    ],
+    "Floyd": [
+      45,
+      47
+    ],
+    "Franklin": [
+      42
+    ],
+    "Hamilton": [
+      20
+    ],
+    "Harrison": [
+      47
+    ],
+    "Jackson": [
+      44
+    ],
+    "Jefferson": [
+      43
+    ],
+    "Jennings": [
+      42,
+      43
+    ],
+    "Johnson": [
+      41
+    ],
+    "Lake": [
+      15
+    ],
+    "LaGrange": [
+      1
+    ],
+    "LaPorte": [
+      8
+    ],
+    "Lawrence": [
+      44
+    ],
+    "Marion": [
+      28,
+      29,
+      30
+    ],
+    "Monroe": [
+      40,
+      44
+    ],
+    "Morgan": [
+      36
+    ],
+    "Noble": [
+      1
+    ],
+    "Ohio": [
+      43
+    ],
+    "Orange": [
+      44
+    ],
+    "Owen": [
+      38
+    ],
+    "Porter": [
+      15
+    ],
+    "Ripley": [
+      42
+    ],
+    "Rush": [
+      42
+    ],
+    "Scott": [
+      43
+    ],
+    "Shelby": [
+      42
+    ],
+    "Steuben": [
+      1
+    ],
+    "Switzerland": [
+      43
+    ],
+    "Union": [
+      42
+    ],
+    "Vigo": [
+      39
+    ],
+    "Washington": [
+      47
+    ],
+    "Wells": [
+      13
+    ]
   },
   "county_to_cds": {
-    "Adams": [3],
-    "Allen": [3],
-    "Lake": [1],
-    "Porter": [1],
-    "Marion": [7],
-    "Wells": [3],
-    "DeKalb": [3],
-    "LaGrange": [3],
-    "Noble": [3],
-    "Steuben": [3],
-    "LaPorte": [1],
-    "Hamilton": [5]
+    "Adams": [
+      3
+    ],
+    "Allen": [
+      3
+    ],
+    "Bartholomew": [
+      9
+    ],
+    "Brown": [
+      9
+    ],
+    "Clark": [
+      9
+    ],
+    "Clay": [
+      8
+    ],
+    "Dearborn": [
+      9
+    ],
+    "DeKalb": [
+      3
+    ],
+    "Decatur": [
+      9
+    ],
+    "Fayette": [
+      6
+    ],
+    "Floyd": [
+      9
+    ],
+    "Franklin": [
+      9
+    ],
+    "Hamilton": [
+      5
+    ],
+    "Harrison": [
+      9
+    ],
+    "Jackson": [
+      9
+    ],
+    "Jefferson": [
+      9
+    ],
+    "Jennings": [
+      9
+    ],
+    "Johnson": [
+      6
+    ],
+    "Lake": [
+      1
+    ],
+    "LaGrange": [
+      3
+    ],
+    "LaPorte": [
+      1
+    ],
+    "Lawrence": [
+      9
+    ],
+    "Marion": [
+      7
+    ],
+    "Monroe": [
+      9
+    ],
+    "Morgan": [
+      6
+    ],
+    "Noble": [
+      3
+    ],
+    "Ohio": [
+      9
+    ],
+    "Orange": [
+      8
+    ],
+    "Owen": [
+      8
+    ],
+    "Porter": [
+      1
+    ],
+    "Ripley": [
+      9
+    ],
+    "Rush": [
+      6
+    ],
+    "Scott": [
+      9
+    ],
+    "Shelby": [
+      6
+    ],
+    "Steuben": [
+      3
+    ],
+    "Switzerland": [
+      9
+    ],
+    "Union": [
+      6
+    ],
+    "Vigo": [
+      8
+    ],
+    "Washington": [
+      9
+    ],
+    "Wells": [
+      3
+    ]
   },
-  "all_counties": ["Adams", "Allen", "DeKalb", "Hamilton", "Lake", "LaGrange", "LaPorte", "Marion", "Noble", "Porter", "Steuben", "Wells"]
+  "all_counties": [
+    "Adams",
+    "Allen",
+    "Bartholomew",
+    "Brown",
+    "Clark",
+    "Clay",
+    "Dearborn",
+    "DeKalb",
+    "Decatur",
+    "Fayette",
+    "Floyd",
+    "Franklin",
+    "Hamilton",
+    "Harrison",
+    "Jackson",
+    "Jefferson",
+    "Jennings",
+    "Johnson",
+    "Lake",
+    "LaGrange",
+    "LaPorte",
+    "Lawrence",
+    "Marion",
+    "Monroe",
+    "Morgan",
+    "Noble",
+    "Ohio",
+    "Orange",
+    "Owen",
+    "Porter",
+    "Ripley",
+    "Rush",
+    "Scott",
+    "Shelby",
+    "Steuben",
+    "Switzerland",
+    "Union",
+    "Vigo",
+    "Washington",
+    "Wells"
+  ],
+  "cd_to_hds": {
+    "9": [
+      46,
+      55,
+      59,
+      60,
+      61,
+      62,
+      63,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74
+    ]
+  },
+  "cd_to_sds": {
+    "9": [
+      27,
+      37,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      47,
+      48
+    ]
+  }
 }
