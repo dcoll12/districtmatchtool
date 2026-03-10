@@ -162,24 +162,37 @@ with tab2:
                     for i, c in enumerate(sorted(known_counties)):
                         county_cols[i % len(county_cols)].info(c)
 
-                # ── Overlapping districts from county data ────────────
+                # ── Overlapping districts ─────────────────────────────
+                # HDs and SDs: derived from county union
                 possible_hds = set()
                 possible_sds = set()
-                possible_cds = set()
-
                 for c in known_counties:
                     for d in data["county_to_hds"].get(c, []):
                         possible_hds.add(d)
                     for d in data["county_to_sds"].get(c, []):
                         possible_sds.add(d)
-                    for d in data["county_to_cds"].get(c, []):
-                        possible_cds.add(d)
 
-                # If a CD was entered, prefer the geometry-based direct lookup
-                if cd and "cd_to_hds" in data and cd in data["cd_to_hds"]:
-                    possible_hds = set(data["cd_to_hds"][cd])
-                    possible_sds = set(data["cd_to_sds"][cd])
-                    st.caption("ℹ️ HD/SD results use geometry-based polygon intersection for this CD.")
+                # CDs: congressional districts never overlap each other.
+                # Derive from geometry-based cd_to_hds/cd_to_sds reverse lookup
+                # so we never show spurious extra CDs from county edge artifacts.
+                cd_to_hds = data.get("cd_to_hds", {})
+                cd_to_sds = data.get("cd_to_sds", {})
+                if cd:
+                    # If a CD was entered, only show that CD
+                    possible_cds = {int(cd)}
+                    # Use geometry-based HD/SD lists for that CD
+                    if cd in cd_to_hds:
+                        possible_hds = set(cd_to_hds[cd])
+                        possible_sds = set(cd_to_sds[cd])
+                else:
+                    # Reverse-lookup: which CDs contain the input HD/SD?
+                    possible_cds = set()
+                    for cd_key, hd_list in cd_to_hds.items():
+                        if (hd and int(hd) in hd_list) or (sd and int(sd) in hd_list):
+                            possible_cds.add(int(cd_key))
+                    for cd_key, sd_list in cd_to_sds.items():
+                        if sd and int(sd) in sd_list:
+                            possible_cds.add(int(cd_key))
 
                 st.markdown("---")
                 st.markdown("**🔗 All Overlapping Districts**")
