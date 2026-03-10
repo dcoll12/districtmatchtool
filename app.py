@@ -10,11 +10,14 @@ st.set_page_config(
 # ── Load data ────────────────────────────────────────────────────────
 
 @st.cache_data
-def load_data():
+def load_data(mtime: float = 0.0):
     with open("district_data.json", encoding="utf-8") as f:
         return json.load(f)
 
-data = load_data()
+import os
+_mtime = os.path.getmtime("district_data.json")
+
+data = load_data(_mtime)
 
 # ── Header ───────────────────────────────────────────────────────────
 
