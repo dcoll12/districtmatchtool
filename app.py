@@ -163,36 +163,54 @@ with tab2:
                         county_cols[i % len(county_cols)].info(c)
 
                 # ── Overlapping districts ─────────────────────────────
-                # HDs and SDs: derived from county union
-                possible_hds = set()
-                possible_sds = set()
-                for c in known_counties:
-                    for d in data["county_to_hds"].get(c, []):
-                        possible_hds.add(d)
-                    for d in data["county_to_sds"].get(c, []):
-                        possible_sds.add(d)
-
-                # CDs: congressional districts never overlap each other.
-                # Derive from geometry-based cd_to_hds/cd_to_sds reverse lookup
-                # so we never show spurious extra CDs from county edge artifacts.
+                # Rule: if a district type was entered as input, show ONLY
+                # that district for that type. If not entered, derive the
+                # matching districts from the input(s).
                 cd_to_hds = data.get("cd_to_hds", {})
                 cd_to_sds = data.get("cd_to_sds", {})
+                hd_to_cd  = data.get("hd_to_cd", {})
+                sd_to_cd  = data.get("sd_to_cd", {})
+
+                # ── Congressional Districts ───────────────────────────
+                # Use county data (accurate after tightened spans) intersected
+                # with geometry-based cd_to_hds to remove polygon-edge artifacts.
                 if cd:
-                    # If a CD was entered, only show that CD
                     possible_cds = {int(cd)}
-                    # Use geometry-based HD/SD lists for that CD
-                    if cd in cd_to_hds:
-                        possible_hds = set(cd_to_hds[cd])
-                        possible_sds = set(cd_to_sds[cd])
                 else:
-                    # Reverse-lookup: which CDs contain the input HD/SD?
-                    possible_cds = set()
-                    for cd_key, hd_list in cd_to_hds.items():
-                        if (hd and int(hd) in hd_list) or (sd and int(sd) in hd_list):
-                            possible_cds.add(int(cd_key))
-                    for cd_key, sd_list in cd_to_sds.items():
-                        if sd and int(sd) in sd_list:
-                            possible_cds.add(int(cd_key))
+                    # CDs confirmed by both county data AND geometry intersection
+                    county_cds = set()
+                    for c in known_counties:
+                        for d in data["county_to_cds"].get(c, []):
+                            county_cds.add(d)
+                    if hd:
+                        geometry_cds = {int(k) for k, v in cd_to_hds.items() if int(hd) in v}
+                    else:
+                        geometry_cds = {int(k) for k, v in cd_to_sds.items() if int(sd) in v}
+                    possible_cds = county_cds & geometry_cds if county_cds & geometry_cds else county_cds
+
+                # ── House Districts ───────────────────────────────────
+                if hd:
+                    possible_hds = {int(hd)}
+                elif cd:
+                    possible_hds = set(cd_to_hds.get(cd, []))
+                else:
+                    # HDs sharing counties with the entered SD
+                    possible_hds = set()
+                    for c in known_counties:
+                        for d in data["county_to_hds"].get(c, []):
+                            possible_hds.add(d)
+
+                # ── Senate Districts ──────────────────────────────────
+                if sd:
+                    possible_sds = {int(sd)}
+                elif cd:
+                    possible_sds = set(cd_to_sds.get(cd, []))
+                else:
+                    # SDs sharing counties with the entered HD
+                    possible_sds = set()
+                    for c in known_counties:
+                        for d in data["county_to_sds"].get(c, []):
+                            possible_sds.add(d)
 
                 st.markdown("---")
                 st.markdown("**🔗 All Overlapping Districts**")
