@@ -30,6 +30,10 @@ def main():
     cd_to_hds: dict[int, set] = defaultdict(set)
     cd_to_sds: dict[int, set] = defaultdict(set)
 
+    # Direct SD↔HD overlap from precinct data
+    sd_to_hds: dict[int, set] = defaultdict(set)
+    hd_to_sds: dict[int, set] = defaultdict(set)
+
     # Precinct counts per district, used to assign dominant CD
     hd_cd_counts: dict[int, Counter] = defaultdict(Counter)
     sd_cd_counts: dict[int, Counter] = defaultdict(Counter)
@@ -44,6 +48,8 @@ def main():
 
         cd_to_hds[c].add(h)
         cd_to_sds[c].add(s)
+        sd_to_hds[s].add(h)
+        hd_to_sds[h].add(s)
         hd_cd_counts[h][c] += 1
         sd_cd_counts[s][c] += 1
 
@@ -61,6 +67,10 @@ def main():
                      for cd, hds in sorted(cd_to_hds.items())}
     cd_to_sds_out = {str(cd): sorted(sds)
                      for cd, sds in sorted(cd_to_sds.items())}
+    sd_to_hds_out = {str(sd): sorted(hds)
+                     for sd, hds in sorted(sd_to_hds.items())}
+    hd_to_sds_out = {str(hd): sorted(sds)
+                     for hd, sds in sorted(hd_to_sds.items())}
 
     # Load existing data (preserves county-level fields we are not changing)
     print(f"Reading {json_path}...")
@@ -118,6 +128,8 @@ def main():
     # Apply updates
     data["cd_to_hds"] = cd_to_hds_out
     data["cd_to_sds"] = cd_to_sds_out
+    data["sd_to_hds"] = sd_to_hds_out
+    data["hd_to_sds"] = hd_to_sds_out
     data["hd_to_cd"]  = hd_to_cd
     data["sd_to_cd"]  = sd_to_cd
 
