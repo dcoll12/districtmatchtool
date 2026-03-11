@@ -1,6 +1,8 @@
 {
   "hd_to_counties": {
-    "1": [],
+    "1": [
+      "Lake"
+    ],
     "2": [
       "Lake"
     ],
@@ -17,6 +19,8 @@
       "St. Joseph"
     ],
     "7": [
+      "LaPorte",
+      "Marshall",
       "St. Joseph"
     ],
     "8": [
@@ -27,12 +31,13 @@
       "Porter"
     ],
     "10": [
-      "Lake",
       "Porter"
     ],
     "11": [
+      "Jasper",
       "Lake",
-      "Newton"
+      "Newton",
+      "Porter"
     ],
     "12": [
       "Lake"
@@ -40,8 +45,12 @@
     "13": [
       "Benton",
       "Fountain",
+      "Jasper",
+      "Montgomery",
+      "Newton",
       "Tippecanoe",
-      "Warren"
+      "Warren",
+      "White"
     ],
     "14": [
       "Lake"
@@ -57,7 +66,8 @@
     ],
     "17": [
       "Fulton",
-      "Marshall"
+      "Marshall",
+      "Pulaski"
     ],
     "18": [
       "Elkhart",
@@ -66,29 +76,32 @@
       "Whitley"
     ],
     "19": [
-      "Lake"
+      "Lake",
+      "Porter"
     ],
     "20": [
       "LaPorte",
       "Starke"
     ],
     "21": [
-      "Elkhart"
+      "Elkhart",
+      "St. Joseph"
     ],
     "22": [
-      "Kosciusko"
+      "Kosciusko",
+      "Wabash"
     ],
     "23": [
       "Cass",
       "Miami"
     ],
     "24": [
-      "Hamilton",
-      "Marion"
+      "Boone",
+      "Hamilton"
     ],
     "25": [
       "Boone",
-      "Marion"
+      "Hendricks"
     ],
     "26": [
       "Tippecanoe"
@@ -105,10 +118,12 @@
       "Hamilton"
     ],
     "30": [
+      "Grant",
       "Howard"
     ],
     "31": [
-      "Grant"
+      "Grant",
+      "Madison"
     ],
     "32": [
       "Hamilton",
@@ -117,6 +132,7 @@
     "33": [
       "Blackford",
       "Delaware",
+      "Henry",
       "Jay",
       "Randolph"
     ],
@@ -135,6 +151,7 @@
     ],
     "38": [
       "Carroll",
+      "Cass",
       "Clinton",
       "Howard",
       "Tippecanoe",
@@ -149,6 +166,7 @@
     "41": [
       "Boone",
       "Clinton",
+      "Montgomery",
       "Tippecanoe"
     ],
     "42": [
@@ -166,9 +184,11 @@
       "Putnam"
     ],
     "45": [
+      "Daviess",
       "Greene",
       "Knox",
-      "Sullivan"
+      "Sullivan",
+      "Vigo"
     ],
     "46": [
       "Clay",
@@ -189,7 +209,8 @@
     "50": [
       "Huntington",
       "Miami",
-      "Wabash"
+      "Wabash",
+      "Wells"
     ],
     "51": [
       "LaGrange",
@@ -197,27 +218,35 @@
     ],
     "52": [
       "DeKalb",
+      "Noble",
       "Steuben"
     ],
     "53": [
-      "Hancock"
+      "Hancock",
+      "Madison"
     ],
     "54": [
       "Hancock",
       "Henry",
-      "Rush"
+      "Rush",
+      "Shelby"
     ],
     "55": [
       "Decatur",
       "Fayette",
       "Franklin",
+      "Ripley",
+      "Rush",
       "Union"
     ],
     "56": [
+      "Henry",
       "Wayne"
     ],
     "57": [
-      "Johnson"
+      "Hendricks",
+      "Johnson",
+      "Morgan"
     ],
     "58": [
       "Johnson"
@@ -241,15 +270,16 @@
     "63": [
       "Daviess",
       "Dubois",
-      "Greene",
       "Martin",
       "Pike"
     ],
     "64": [
       "Gibson",
-      "Knox"
+      "Knox",
+      "Vanderburgh"
     ],
     "65": [
+      "Jackson",
       "Lawrence",
       "Orange",
       "Washington"
@@ -267,10 +297,12 @@
     ],
     "68": [
       "Dearborn",
+      "Jefferson",
       "Ohio",
       "Switzerland"
     ],
     "69": [
+      "Bartholomew",
       "Jackson",
       "Scott",
       "Washington"
@@ -281,7 +313,10 @@
       "Harrison",
       "Washington"
     ],
-    "71": [],
+    "71": [
+      "Clark",
+      "Floyd"
+    ],
     "72": [
       "Floyd"
     ],
@@ -299,6 +334,7 @@
       "Spencer"
     ],
     "75": [
+      "Gibson",
       "Pike",
       "Warrick"
     ],
@@ -310,14 +346,17 @@
       "Vanderburgh"
     ],
     "78": [
-      "Vanderburgh"
+      "Vanderburgh",
+      "Warrick"
     ],
     "79": [
       "Adams",
       "Jay",
       "Wells"
     ],
-    "80": [],
+    "80": [
+      "Allen"
+    ],
     "81": [
       "Allen"
     ],
@@ -342,7 +381,9 @@
     ],
     "88": [
       "Hamilton",
-      "Hancock"
+      "Hancock",
+      "Madison",
+      "Marion"
     ],
     "89": [
       "Marion"
@@ -371,7 +412,9 @@
     "97": [
       "Marion"
     ],
-    "98": [],
+    "98": [
+      "Marion"
+    ],
     "99": [
       "Marion"
     ],
@@ -390,13 +433,11 @@
       "Lake"
     ],
     "4": [
-      "Lake",
       "LaPorte",
       "Porter"
     ],
     "5": [
       "Jasper",
-      "Lake",
       "Porter",
       "Pulaski",
       "White"
@@ -429,12 +470,14 @@
       "St. Joseph"
     ],
     "11": [
+      "Elkhart",
       "St. Joseph"
     ],
     "12": [
       "Elkhart"
     ],
     "13": [
+      "DeKalb",
       "LaGrange",
       "Noble",
       "Steuben"
@@ -453,7 +496,6 @@
     "17": [
       "Grant",
       "Huntington",
-      "Miami",
       "Wabash"
     ],
     "18": [
@@ -471,8 +513,7 @@
       "Wells"
     ],
     "20": [
-      "Hamilton",
-      "Marion"
+      "Hamilton"
     ],
     "21": [
       "Hamilton",
@@ -485,6 +526,7 @@
     ],
     "23": [
       "Fountain",
+      "Montgomery",
       "Parke",
       "Tippecanoe",
       "Vermillion",
@@ -514,6 +556,7 @@
       "Shelby"
     ],
     "29": [
+      "Boone",
       "Hamilton",
       "Marion"
     ],
@@ -550,10 +593,10 @@
     ],
     "38": [
       "Clay",
+      "Sullivan",
       "Vigo"
     ],
     "39": [
-      "Clay",
       "Daviess",
       "Greene",
       "Knox",
@@ -593,7 +636,8 @@
       "Orange"
     ],
     "45": [
-      "Clark"
+      "Clark",
+      "Floyd"
     ],
     "46": [
       "Marion"
@@ -622,8 +666,8 @@
   },
   "cd_to_counties": {
     "1": [
-      "Lake",
       "LaPorte",
+      "Lake",
       "Porter"
     ],
     "2": [
@@ -662,8 +706,8 @@
       "Clinton",
       "Fountain",
       "Hendricks",
+      "Howard",
       "Jasper",
-      "Marion",
       "Montgomery",
       "Morgan",
       "Newton",
@@ -678,7 +722,6 @@
       "Hamilton",
       "Howard",
       "Madison",
-      "Marion",
       "Tipton"
     ],
     "6": [
@@ -746,6 +789,7 @@
       79
     ],
     "Allen": [
+      80,
       81,
       82,
       83,
@@ -754,6 +798,7 @@
     ],
     "Bartholomew": [
       59,
+      69,
       73
     ],
     "Benton": [
@@ -763,6 +808,7 @@
       33
     ],
     "Boone": [
+      24,
       25,
       28,
       41
@@ -774,11 +820,13 @@
       38
     ],
     "Cass": [
-      23
+      23,
+      38
     ],
     "Clark": [
       66,
-      70
+      70,
+      71
     ],
     "Clay": [
       42,
@@ -792,7 +840,11 @@
       74
     ],
     "Daviess": [
+      45,
       63
+    ],
+    "DeKalb": [
+      52
     ],
     "Dearborn": [
       68
@@ -801,9 +853,6 @@
       55,
       67,
       73
-    ],
-    "DeKalb": [
-      52
     ],
     "Delaware": [
       33,
@@ -825,6 +874,7 @@
     ],
     "Floyd": [
       70,
+      71,
       72
     ],
     "Fountain": [
@@ -838,14 +888,15 @@
       17
     ],
     "Gibson": [
-      64
+      64,
+      75
     ],
     "Grant": [
+      30,
       31
     ],
     "Greene": [
-      45,
-      63
+      45
     ],
     "Hamilton": [
       24,
@@ -864,11 +915,15 @@
       70
     ],
     "Hendricks": [
+      25,
       28,
-      40
+      40,
+      57
     ],
     "Henry": [
-      54
+      33,
+      54,
+      56
     ],
     "Howard": [
       30,
@@ -879,9 +934,12 @@
     ],
     "Jackson": [
       62,
+      65,
       69
     ],
     "Jasper": [
+      11,
+      13,
       16
     ],
     "Jay": [
@@ -890,7 +948,8 @@
     ],
     "Jefferson": [
       66,
-      67
+      67,
+      68
     ],
     "Jennings": [
       67,
@@ -913,33 +972,36 @@
     "LaGrange": [
       51
     ],
+    "LaPorte": [
+      7,
+      9,
+      20
+    ],
     "Lake": [
+      1,
       2,
       3,
-      10,
       11,
       12,
       14,
       15,
       19
     ],
-    "LaPorte": [
-      9,
-      20
-    ],
     "Lawrence": [
       65
     ],
     "Madison": [
+      31,
       35,
-      36
+      36,
+      53,
+      88
     ],
     "Marion": [
-      24,
-      25,
       32,
       86,
       87,
+      88,
       89,
       90,
       91,
@@ -949,10 +1011,12 @@
       95,
       96,
       97,
+      98,
       99,
       100
     ],
     "Marshall": [
+      7,
       17
     ],
     "Martin": [
@@ -969,17 +1033,22 @@
       62
     ],
     "Montgomery": [
+      13,
       28,
+      41,
       44
     ],
     "Morgan": [
+      57,
       60
     ],
     "Newton": [
-      11
+      11,
+      13
     ],
     "Noble": [
-      18
+      18,
+      52
     ],
     "Ohio": [
       68
@@ -1004,13 +1073,16 @@
     "Porter": [
       4,
       9,
-      10
+      10,
+      11,
+      19
     ],
     "Posey": [
       76
     ],
     "Pulaski": [
-      16
+      16,
+      17
     ],
     "Putnam": [
       44
@@ -1019,16 +1091,12 @@
       33
     ],
     "Ripley": [
+      55,
       67
     ],
     "Rush": [
-      54
-    ],
-    "St. Joseph": [
-      5,
-      6,
-      7,
-      8
+      54,
+      55
     ],
     "Scott": [
       66,
@@ -1036,10 +1104,18 @@
     ],
     "Shelby": [
       47,
+      54,
       73
     ],
     "Spencer": [
       74
+    ],
+    "St. Joseph": [
+      5,
+      6,
+      7,
+      8,
+      21
     ],
     "Starke": [
       16,
@@ -1069,6 +1145,7 @@
       55
     ],
     "Vanderburgh": [
+      64,
       76,
       77,
       78
@@ -1079,16 +1156,19 @@
     "Vigo": [
       42,
       43,
+      45,
       46
     ],
     "Wabash": [
+      22,
       50
     ],
     "Warren": [
       13
     ],
     "Warrick": [
-      75
+      75,
+      78
     ],
     "Washington": [
       65,
@@ -1099,9 +1179,11 @@
       56
     ],
     "Wells": [
+      50,
       79
     ],
     "White": [
+      13,
       16
     ],
     "Whitley": [
@@ -1129,7 +1211,8 @@
       19
     ],
     "Boone": [
-      7
+      7,
+      29
     ],
     "Brown": [
       44
@@ -1144,8 +1227,7 @@
       45
     ],
     "Clay": [
-      38,
-      39
+      38
     ],
     "Clinton": [
       7
@@ -1156,14 +1238,15 @@
     "Daviess": [
       39
     ],
+    "DeKalb": [
+      13,
+      14
+    ],
     "Dearborn": [
       43
     ],
     "Decatur": [
       42
-    ],
-    "DeKalb": [
-      14
     ],
     "Delaware": [
       26
@@ -1173,12 +1256,14 @@
     ],
     "Elkhart": [
       9,
+      11,
       12
     ],
     "Fayette": [
       42
     ],
     "Floyd": [
+      45,
       47
     ],
     "Fountain": [
@@ -1261,17 +1346,15 @@
     "LaGrange": [
       13
     ],
+    "LaPorte": [
+      4,
+      8
+    ],
     "Lake": [
       1,
       2,
       3,
-      4,
-      5,
       6
-    ],
-    "LaPorte": [
-      4,
-      8
     ],
     "Lawrence": [
       44
@@ -1280,7 +1363,6 @@
       25
     ],
     "Marion": [
-      20,
       28,
       29,
       30,
@@ -1300,7 +1382,6 @@
       39
     ],
     "Miami": [
-      17,
       18
     ],
     "Monroe": [
@@ -1308,7 +1389,8 @@
       44
     ],
     "Montgomery": [
-      7
+      7,
+      23
     ],
     "Morgan": [
       37
@@ -1361,12 +1443,6 @@
     "Rush": [
       42
     ],
-    "St. Joseph": [
-      8,
-      9,
-      10,
-      11
-    ],
     "Scott": [
       43
     ],
@@ -1377,6 +1453,12 @@
     "Spencer": [
       48
     ],
+    "St. Joseph": [
+      8,
+      9,
+      10,
+      11
+    ],
     "Starke": [
       8
     ],
@@ -1384,6 +1466,7 @@
       13
     ],
     "Sullivan": [
+      38,
       39
     ],
     "Switzerland": [
@@ -1479,14 +1562,14 @@
     "Daviess": [
       8
     ],
+    "DeKalb": [
+      3
+    ],
     "Dearborn": [
       9
     ],
     "Decatur": [
       9
-    ],
-    "DeKalb": [
-      3
     ],
     "Delaware": [
       5
@@ -1538,6 +1621,7 @@
       6
     ],
     "Howard": [
+      4,
       5
     ],
     "Huntington": [
@@ -1571,12 +1655,12 @@
     "LaGrange": [
       3
     ],
-    "Lake": [
-      1
-    ],
     "LaPorte": [
       1,
       2
+    ],
+    "Lake": [
+      1
     ],
     "Lawrence": [
       9
@@ -1585,8 +1669,6 @@
       5
     ],
     "Marion": [
-      4,
-      5,
       6,
       7
     ],
@@ -1654,9 +1736,6 @@
     "Rush": [
       6
     ],
-    "St. Joseph": [
-      2
-    ],
     "Scott": [
       9
     ],
@@ -1665,6 +1744,9 @@
     ],
     "Spencer": [
       8
+    ],
+    "St. Joseph": [
+      2
     ],
     "Starke": [
       2
