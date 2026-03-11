@@ -30,6 +30,42 @@ col2.metric("House Districts", len(data["hd_to_counties"]))
 col3.metric("Senate Districts", len(data["sd_to_counties"]))
 col4.metric("Congressional Districts", len(data["cd_to_counties"]))
 
+with st.expander("ℹ️ About this tool & data source"):
+    st.markdown("""
+**What this tool does**
+
+Enter any Indiana county, House district (HD), Senate district (SD), or
+Congressional district (CD) to instantly see every other district that
+overlaps with it.
+
+**Data source**
+
+All district assignments come directly from the **Indiana Office of Census
+Data precinct file** (*2026_Precincts_JAN_21_2026.xlsx*). Every row in that
+file is one election precinct and records its county, Congressional (C),
+Senate (S), and House (H) district numbers.
+
+Because the lookup tables are built precinct-by-precinct from the official
+file, the overlaps are exact — not estimates from map polygons.
+
+**How overlaps are determined**
+
+| You enter | House Districts shown | Senate Districts shown |
+|---|---|---|
+| An HD | That HD only | Every SD that shares at least one precinct with the HD |
+| An SD | Every HD that shares at least one precinct with the SD | That SD only |
+| A CD | Every HD/SD that has any precinct inside the CD | Same |
+| A county | Every HD/SD/CD that has any precinct in that county | Same |
+
+**Split counties**
+
+Some counties (e.g. Lake, Bartholomew) are divided among multiple House or
+Senate districts. When you look up a county you will see *all* districts
+that contain even one precinct in that county.
+
+**Last updated:** January 21, 2026 precinct file
+""")
+
 st.divider()
 
 # ── Tab layout ───────────────────────────────────────────────────────
