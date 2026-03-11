@@ -193,8 +193,11 @@ with tab2:
                     possible_hds = {int(hd)}
                 elif cd:
                     possible_hds = set(cd_to_hds.get(cd, []))
+                elif sd and data.get("sd_to_hds", {}).get(sd):
+                    # Use direct precinct-level SD→HD mapping (avoids
+                    # county-bridge over-inclusion in split counties)
+                    possible_hds = set(data["sd_to_hds"][sd])
                 else:
-                    # HDs sharing counties with the entered SD
                     possible_hds = set()
                     for c in known_counties:
                         for d in data["county_to_hds"].get(c, []):
@@ -205,8 +208,10 @@ with tab2:
                     possible_sds = {int(sd)}
                 elif cd:
                     possible_sds = set(cd_to_sds.get(cd, []))
+                elif hd and data.get("hd_to_sds", {}).get(hd):
+                    # Use direct precinct-level HD→SD mapping
+                    possible_sds = set(data["hd_to_sds"][hd])
                 else:
-                    # SDs sharing counties with the entered HD
                     possible_sds = set()
                     for c in known_counties:
                         for d in data["county_to_sds"].get(c, []):
