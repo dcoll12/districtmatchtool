@@ -87,54 +87,64 @@ This project is designed for **GitHub Pages** - free static hosting by GitHub.
 
 See [GITHUB_PAGES_DEPLOY.md](GITHUB_PAGES_DEPLOY.md) for detailed instructions.
 
-## 💻 How It Works
+## 📊 Data Source
 
-This is a **pure client-side application**:
+All district assignments come directly from the **Indiana Office of Census Data precinct file** (`2026_Precincts_JAN_21_2026.xlsx`). Every row in that file is one election precinct and records its county, Congressional (C), Senate (S), and House (H) district numbers.
+
+Because the lookup tables are built precinct-by-precinct from the official file, the overlaps are exact — not estimates from map polygons.
+
+To rebuild `district_data.json` after a new precinct file is available:
+
+```bash
+# 1. Replace the .xlsx file with the new one
+# 2. Run the update script
+python update_from_precincts.py
+```
+
+## 🔍 How Overlaps Are Determined
+
+| You enter | House Districts shown | Senate Districts shown |
+|---|---|---|
+| An HD | That HD only | Every SD that shares at least one precinct with the HD |
+| An SD | Every HD that shares at least one precinct with the SD | That SD only |
+| A CD | Every HD/SD that has any precinct inside the CD | Same |
+| A county | Every HD/SD/CD that has any precinct in that county | Same |
+
+**Split counties:** Some counties (e.g. Lake, Bartholomew) are divided among multiple House or Senate districts. A county lookup shows *all* districts that contain even one precinct in that county.
+
+## 💻 How It Works
 
 ```
 User visits page
     ↓
-Browser loads index.html
+Browser loads index.html (or Streamlit app.py)
     ↓
-JavaScript fetches district_data.json
+User searches → lookup tables find matches instantly
     ↓
-User searches → JavaScript finds matches
-    ↓
-Results displayed instantly
+Results displayed
 ```
-
-**No server, no API calls, no backend.**
-
-Everything runs in your browser using vanilla JavaScript.
 
 ## 📊 Data Structure
 
-The `district_data.json` contains:
+`district_data.json` keys:
 
-```json
-{
-  "hd_to_counties": {
-    "1": ["Adams", "Wells"],
-    "2": ["Allen", "Wells"],
-    ...
-  },
-  "sd_to_counties": {
-    "1": ["DeKalb", "LaGrange", "Noble", "Steuben"],
-    ...
-  },
-  "cd_to_counties": {
-    "1": ["Lake", "Porter", "LaPorte"],
-    ...
-  },
-  "county_to_hds": {
-    "Marion": [86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100],
-    ...
-  },
-  "county_to_sds": {...},
-  "county_to_cds": {...},
-  "all_counties": ["Adams", "Allen", "Bartholomew", ...]
-}
-```
+| Key | Description |
+|---|---|
+| `hd_to_counties` | HD number → list of counties it contains |
+| `sd_to_counties` | SD number → list of counties it contains |
+| `cd_to_counties` | CD number → list of counties it contains |
+| `county_to_hds` | County name → list of HDs with precincts in that county |
+| `county_to_sds` | County name → list of SDs with precincts in that county |
+| `county_to_cds` | County name → list of CDs with precincts in that county |
+| `sd_to_hds` | SD number → list of HDs that share at least one precinct |
+| `hd_to_sds` | HD number → list of SDs that share at least one precinct |
+| `cd_to_hds` | CD number → list of HDs with precincts inside the CD |
+| `cd_to_sds` | CD number → list of SDs with precincts inside the CD |
+| `hd_to_cd` | HD number → dominant CD (by precinct count) |
+| `sd_to_cd` | SD number → dominant CD (by precinct count) |
+| `all_counties` | Sorted list of all 92 Indiana county names |
+
+All keys are built directly from the precinct Excel file via `update_from_precincts.py`.
 
 ## 🎨 Customization
 
