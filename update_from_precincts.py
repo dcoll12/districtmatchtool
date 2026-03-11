@@ -34,6 +34,14 @@ def main():
     sd_to_hds: dict[int, set] = defaultdict(set)
     hd_to_sds: dict[int, set] = defaultdict(set)
 
+    # County ↔ district mappings rebuilt from precinct data
+    county_to_hds: dict[str, set] = defaultdict(set)
+    county_to_sds: dict[str, set] = defaultdict(set)
+    county_to_cds: dict[str, set] = defaultdict(set)
+    hd_to_counties: dict[int, set] = defaultdict(set)
+    sd_to_counties: dict[int, set] = defaultdict(set)
+    cd_to_counties: dict[int, set] = defaultdict(set)
+
     # Precinct counts per district, used to assign dominant CD
     hd_cd_counts: dict[int, Counter] = defaultdict(Counter)
     sd_cd_counts: dict[int, Counter] = defaultdict(Counter)
@@ -44,6 +52,8 @@ def main():
         if c is None or s is None or h is None:
             continue
         c, s, h = int(c), int(s), int(h)
+        if not county_name:
+            continue
         rows_read += 1
 
         cd_to_hds[c].add(h)
@@ -52,6 +62,13 @@ def main():
         hd_to_sds[h].add(s)
         hd_cd_counts[h][c] += 1
         sd_cd_counts[s][c] += 1
+
+        county_to_hds[county_name].add(h)
+        county_to_sds[county_name].add(s)
+        county_to_cds[county_name].add(c)
+        hd_to_counties[h].add(county_name)
+        sd_to_counties[s].add(county_name)
+        cd_to_counties[c].add(county_name)
 
     print(f"  Processed {rows_read} precinct rows")
     print(f"  CDs found : {sorted(cd_to_hds.keys())}")
@@ -125,6 +142,20 @@ def main():
             changed += 1
     print(f"  {changed} SD→CD assignments changed")
 
+    # Sort county-level outputs for clean JSON
+    county_to_hds_out = {c: sorted(hds) for c, hds in sorted(county_to_hds.items())}
+    county_to_sds_out = {c: sorted(sds) for c, sds in sorted(county_to_sds.items())}
+    county_to_cds_out = {c: sorted(cds) for c, cds in sorted(county_to_cds.items())}
+    hd_to_counties_out = {str(h): sorted(cs) for h, cs in sorted(hd_to_counties.items())}
+    sd_to_counties_out = {str(s): sorted(cs) for s, cs in sorted(sd_to_counties.items())}
+    cd_to_counties_out = {str(c): sorted(cs) for c, cs in sorted(cd_to_counties.items())}
+
+    # Show county mapping changes for HD 69 as a sanity check
+    old_hd69 = data.get("hd_to_counties", {}).get("69", [])
+    new_hd69 = hd_to_counties_out.get("69", [])
+    if old_hd69 != new_hd69:
+        print(f"\nHD 69 counties: {old_hd69} → {new_hd69}")
+
     # Apply updates
     data["cd_to_hds"] = cd_to_hds_out
     data["cd_to_sds"] = cd_to_sds_out
@@ -132,6 +163,13 @@ def main():
     data["hd_to_sds"] = hd_to_sds_out
     data["hd_to_cd"]  = hd_to_cd
     data["sd_to_cd"]  = sd_to_cd
+    data["county_to_hds"] = county_to_hds_out
+    data["county_to_sds"] = county_to_sds_out
+    data["county_to_cds"] = county_to_cds_out
+    data["hd_to_counties"] = hd_to_counties_out
+    data["sd_to_counties"] = sd_to_counties_out
+    data["cd_to_counties"] = cd_to_counties_out
+    data["all_counties"] = sorted(county_to_hds.keys())
 
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
